@@ -17,3 +17,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # 作業ディレクトリの指定
 WORKDIR /var/www
+
+# Laravel アプリをコピー
+COPY . /var/www
+
+# Composer で依存パッケージをインストール
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
