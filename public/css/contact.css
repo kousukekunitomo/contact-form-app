@@ -1,0 +1,194 @@
+body {
+    font-family: 'Inika', serif;
+    background-color: #ffffff;
+    color: #8B7969;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+h2 {
+    font-size: 35px;
+    font-family: 'Inika', serif;
+    color: #8B7969;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 40px;
+}
+
+.form-group label {
+    width: 180px;
+    font-weight: bold;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.form-input {
+    flex: 1;
+    max-width: 618px;
+    width: 100%;
+}
+
+.form-input input[type="text"],
+.form-input input[type="email"],
+.form-input select,
+.form-input textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E0DFDE;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    color: #8B7969;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.required-mark {
+    color: red;
+    margin-left: 4px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.tel-input-group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.tel-input-group input[type="text"] {
+    width: calc((100% - 16px) / 3);
+}
+
+.tel-separator {
+    color: #8B7969;
+    font-weight: bold;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+}
+
+.name-inputs {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.name-inputs input[type="text"] {
+    width: 50%;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E0DFDE;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    color: #8B7969;
+}
+
+/* 登録画面・確認画面共通のボタン配置 */
+.form-buttons,
+.confirm-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 16px;
+}
+
+.form-buttons button,
+.confirm-buttons button,
+.confirm-buttons a {
+    padding: 12px 36px;
+    background-color: #8B7969;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    min-width: 180px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.form-buttons button:hover,
+.confirm-buttons button:hover,
+.confirm-buttons a:hover {
+    opacity: 0.9;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+::placeholder {
+    color: #c2b8b0;
+    font-size: 13px;
+}
+
+/* 確認画面テーブル */
+.confirm-table {
+    width: 100%;
+    max-width: 618px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 2px solid #007bff;
+}
+
+.confirm-table th {
+    background-color: #B89D7D;
+    color: white;
+    padding: 12px;
+    width: 200px;
+    text-align: left;
+}
+
+.confirm-table td {
+    background-color: #f9f9f9;
+    padding: 12px;
+    word-break: break-word;
+    color: #8B7969;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.name-inputs input[type="text"],
+.form-input input[type="text"],
+.form-input input[type="email"] {
+    color: #8B7969;
+}
+

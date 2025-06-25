@@ -1,0 +1,50 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    container_name: contact-form-app-app
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    expose:
+      - "9000"
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:latest
+    container_name: contact-form-app-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: laravel_db
+      MYSQL_ROOT_PASSWORD: root_password
+      TZ: Asia/Tokyo
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database/docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./database/docker/mysql/data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: contact-form-app-phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root_password
+    ports:
+      - "8080:80"
+    depends_on:
+      - db

@@ -1,0 +1,476 @@
+/* ===== 全体共通設定 ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inika', serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* ===== ヘッダー ===== */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logout-btn {
+    background-color: transparent;
+    border: 1px solid #d6c3b0;
+    color: #d6c3b0;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ===== ページヘッダー ===== */
+.page-header {
+    margin: 12px auto 24px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #6f4e37;
+    font-family: 'Inika', serif;
+    margin: 0;
+}
+
+/* ===== 検索フォーム ===== */
+.search-form-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 24px;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+}
+
+.search-form input[type="text"] {
+    flex: 1 1 240px;
+    min-width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #E0DFDE;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    color: #7b6651;
+    font-size: 14px;
+    height: 38px;
+}
+
+.search-form select,
+.search-form input[type="date"] {
+    padding: 8px 12px;
+    border: 1px solid #E0DFDE;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    color: #7b6651;
+    font-size: 14px;
+    height: 38px;
+}
+
+.search-form select[name="gender"] {
+    flex: 0 0 100px;
+}
+
+.search-form select[name="category_id"],
+.search-form input[type="date"] {
+    flex: 0 0 140px;
+}
+
+.search-btn,
+.reset-btn {
+    padding: 8px 16px;
+    width: 100px;
+    height: 38px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-btn {
+    background-color: #7b6651;
+    color: white;
+}
+
+.reset-btn {
+    background-color: #f3ece7;
+    color: #7b6651;
+    text-decoration: none;
+    border: 1px solid #d6c3b0;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 8px;
+    flex: 0 0 auto;
+    margin-top: 4px;
+}
+
+/* ===== 一覧テーブル ===== */
+.contact-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid #E0DFDE;
+    color: #7b6651;
+    /* 外枠は残す */
+}
+
+.contact-table th,
+.contact-table td {
+    border-right: none;
+    /* 縦のボーダーを非表示 */
+    padding: 12px 16px;
+    text-align: left;
+    /* 左揃え */
+}
+
+.contact-table th.col-name,
+.contact-table td.col-name {
+    width: 200px;
+}
+
+.contact-table th.col-gender,
+.contact-table td.col-gender {
+    width: 80px;
+    text-align: center;
+}
+
+.contact-table th.col-email,
+.contact-table td.col-email {
+    width: 220px;
+    word-break: break-word;
+}
+
+.contact-table th.col-category,
+.contact-table td.col-category {
+    width: 180px;
+}
+
+.contact-table th.col-detail,
+.contact-table td.col-detail {
+    width: 80px;
+    text-align: center;
+}
+
+/* ===== テーブル操作 ===== */
+.table-controls {
+    max-width: 1200px;
+    margin: 32px auto 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.export-btn {
+    background-color: #d6c3b0;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* ===== ページネーション ===== */
+.pagination-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a,
+.pagination li span {
+    display: block;
+    padding: 6px 12px;
+    border: 1px solid #e0d6cf;
+    margin-left: -1px;
+    color: #6f4e37;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: white;
+    transition: background-color 0.2s ease;
+}
+
+.pagination li.active span {
+    background-color: #8a7464;
+    color: white;
+    border-color: #8a7464;
+}
+
+.pagination li.disabled span {
+    color: #ccc;
+    cursor: default;
+}
+
+.pagination li:first-child a,
+.pagination li:first-child span {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.pagination li:last-child a,
+.pagination li:last-child span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.detail-btn {
+    background-color: transparent;
+    border: 1px solid #d6c3b0;
+    color: #d6c3b0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.detail-btn:hover {
+    background-color: #f3ece7;
+    color: #7b6651;
+    border-color: #cdb7a0;
+}
+
+.contact-table thead {
+    background-color: #8B7969;
+    color: white;
+}
+
+.contact-table th {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 行のボーダー（下線）を残す */
+.contact-table tbody tr {
+    border-bottom: 1px solid #E0DFDE;
+}
+
+/* 最後の行の下ボーダーも必要ならこちら */
+.contact-table tr:last-child {
+    border-bottom: 1px solid #E0DFDE;
+}
+
+.search-form input[type="text"]::placeholder {
+    color: #b6a998;
+    /* ← お好みの色に変更 */
+    opacity: 1;
+    /* Firefox対応 */
+}
+
+.search-form input[type="text"]::-webkit-input-placeholder {
+    color: #b6a998;
+}
+
+.search-form input[type="text"]:-ms-input-placeholder {
+    color: #b6a998;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    color: #8B7969;
+    padding: 40px;
+    border-radius: 12px;
+    width: 600px;
+    position: relative;
+    font-family: 'Inika', serif;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #8B7969;
+}
+
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.modal-table th {
+    text-align: left;
+    padding: 8px 12px;
+    vertical-align: top;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.modal-table td {
+    padding: 8px 12px;
+}
+
+.delete-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 8px 20px;
+    background-color: #a1533b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #8a432e;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #8B7969;
+    font-family: 'Inika', serif;
+    padding: 40px;
+    border-radius: 12px;
+    width: 600px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.modal-table th {
+    text-align: left;
+    padding: 8px 12px;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.modal-table td {
+    padding: 8px 12px;
+    word-break: break-word;
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #8B7969;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #8B7969;
+    background-color: white;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    /* ← 微調整 */
+    padding-top: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+
+.close-btn:hover {
+    background-color: #8B7969;
+    color: white;
+}
+.delete-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 24px;
+    background-color: #a1533b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #8a3e2e;
+}
+
+.alert-success {
+    background-color: #e7f3ec;
+    border: 1px solid #c8e3d4;
+    color: #2f6b4f;
+    padding: 12px 20px;
+    margin: 16px auto;
+    max-width: 800px;
+    border-radius: 4px;
+}
